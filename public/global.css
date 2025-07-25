@@ -1,8 +1,9 @@
 :root {
-    --primary: #4361ee;
-    --secondary: #3f37c9;
-    --accent: #4895ef;
-    --light: #f8f9fa;
+    --primary: #1f2937;      /* charcoal gray */
+    --secondary: #6b7280;    /* cool gray */
+    --accent: #10b981;       /* modern soft green */
+    --bg-light: #f9fafb;
+    --white: #ffffff;
     --dark: #212529;
     --success: #4cc9f0;
     --info: #7209b7;
@@ -41,12 +42,18 @@
 * {
     margin: 0;
 }
+
 body {
-    line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
-    font-family: 'lato', sans-serif;
-    background-color: #f5f5f5;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-light);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: var(--primary);
 }
+
 img, picture, video, canvas, svg {
     display: block;
     max-width: 100%;
@@ -69,4 +76,13 @@ h1, h2, h3, h4, h5, h6 {
 
 .d-flex {
     display: flex;
+}
+
+#app {
+    background: var(--white);
+    padding: 2.5rem 2.75rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+    width: 360px;
+    text-align: center;
 }

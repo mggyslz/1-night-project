@@ -1,32 +1,5 @@
 /* register.css */
-
-:root {
-  --primary: #1f2937;      /* charcoal gray */
-  --secondary: #6b7280;    /* cool gray */
-  --accent: #10b981;       /* modern soft green */
-  --bg-light: #f9fafb;
-  --white: #ffffff;
-}
-
-body {
-  margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: var(--bg-light);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  color: var(--primary);
-}
-
-#app {
-  background: var(--white);
-  padding: 2.5rem 2.75rem;
-  border-radius: 16px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
-  width: 360px;
-  text-align: center;
-}
+@import url('../global.css');
 
 .register-container h2 {
   margin-bottom: 1.5rem;
