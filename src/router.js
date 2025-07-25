@@ -1,7 +1,7 @@
-import { renderLanding } from './components/landing.js';
-import { renderLogin } from './components/login.js';
-import { renderRegister } from './components/register.js';
-import { renderDashboard } from './components/dashboard.js';
+import { renderLanding } from './components/landing/landing.js';
+import { renderLogin } from './components/login/login.js';
+import { renderRegister } from './components/register/register.js';
+import { renderDashboard } from './components/dashboard/dashboard.js';
 
 const routes = {
   '/': renderLanding,
