@@ -1,6 +1,8 @@
 import { Sidebar } from './components/Sidebar.js';
-import './style.css'; // Assuming you have a styles.css for your styles
+import './style.css';
 import { router } from './router.js';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap';
 
 document.querySelector('#app').innerHTML = `
   <div class="app-layout">
