@@ -9,7 +9,7 @@ export async function renderLogin() {
     if (!document.querySelector('link[href="/login/login.css"]')) {
         const link = document.createElement('link');
         link.rel = 'stylesheet';
-        link.href = 'login/login.css';
+        link.href = '/login/login.css';
         document.head.appendChild(link);
     }
 

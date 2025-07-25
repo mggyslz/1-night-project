@@ -1,4 +1,3 @@
-import '../../public/register/register.css'
 import { sql } from '../db.js';
 
 export async function renderRegister() {
