@@ -1,46 +1,76 @@
 @import url('../global.css');
+
+:root {
+  --primary: #1f2937;      /* charcoal gray */
+  --secondary: #6b7280;    /* cool gray */
+  --accent: #10b981;       /* modern green for subtle pop */
+  --bg-light: #f9fafb;     /* soft neutral background */
+  --white: #ffffff;
+}
+
 body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(to right, #667eea, #764ba2);
+  background-color: var(--bg-light);
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  color: var(--primary);
 }
 
 #app {
-  background: white;
-  padding: 3rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  background: var(--white);
+  padding: 3.5rem 4rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+  max-width: 680px;
+  width: 100%;
   text-align: center;
 }
 
-h1 {
+.landing-container h1 {
   font-size: 2rem;
-  margin-bottom: 2rem;
-  color: #333;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: var(--primary);
 }
 
-p {
+.landing-container p {
+  font-size: 1.1rem;
+  color: var(--secondary);
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
+}
+
+.landing-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+a.btn {
+  font-weight: 600;
   font-size: 1rem;
-  color: #666;
-  margin-bottom: 2rem;
-}
-
-a[data-link] {
-  font-weight: bold;
-  color: #1c92d2;
+  color: var(--white);
+  background-color: var(--primary);
   text-decoration: none;
-  margin: 0 10px;
-  padding: 0.5rem 1rem;
-  border: 2px solid var(--primary);
-  border-radius: 6px;
-  transition: background 0.3s, color 0.3s;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
-a[data-link]:hover {
-  background: var(--primary);
-  color: white;
+a.btn:hover {
+  background-color: #111827; /* darker charcoal */
+  transform: translateY(-2px);
+}
+
+a.btn-secondary {
+  background-color: var(--accent);
+}
+
+a.btn-secondary:hover {
+  background-color: #059669; /* darker green */
 }
