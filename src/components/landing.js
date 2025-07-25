@@ -1,4 +1,4 @@
-import './landing.css'
+import '../../public/landing/landing.css'
 export function renderLanding() {
     document.getElementById('app').innerHTML = `
     <h1>Welcome to the Landing Page</h1>

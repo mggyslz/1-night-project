@@ -1,7 +1,8 @@
-import { renderLanding } from './components/landing/landing.js';
-import { renderLogin } from './components/login/login.js';
-import { renderRegister } from './components/register/register.js';
-import { renderDashboard } from './components/dashboard/dashboard.js';
+// router.js
+import { renderLanding } from './components/landing.js';
+import { renderLogin } from './components/login.js';
+import { renderRegister } from './components/register.js';
+import { renderDashboard } from './components/dashboard.js';
 
 const routes = {
   '/': renderLanding,
@@ -16,7 +17,7 @@ export function initRouter() {
   async function navigate(path) {
     const render = routes[path];
     if (render) {
-      render();
+      await render(); // in case the component is async (e.g., fetches HTML/CSS)
     } else {
       app.innerHTML = `<h2>404 - Page Not Found</h2>`;
     }
@@ -24,9 +25,10 @@ export function initRouter() {
 
   function attachLinkInterception() {
     document.body.addEventListener('click', (e) => {
-      if (e.target.matches('a[data-link]')) {
+      const target = e.target.closest('a[data-link]');
+      if (target) {
         e.preventDefault();
-        const path = e.target.getAttribute('href');
+        const path = target.getAttribute('href');
         history.pushState(null, '', path);
         navigate(path);
       }
@@ -38,5 +40,5 @@ export function initRouter() {
   });
 
   attachLinkInterception();
-  navigate(location.pathname); // Initial load
+  navigate(location.pathname); // Load current route on page load
 }

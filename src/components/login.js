@@ -1,5 +1,5 @@
-import { sql } from '../../db.js';
-import './login.css'
+import { sql } from '../db.js';
+import '../../public/login/login.css'
 export function renderLogin() {
     const html = `
     <form id="login-form">
