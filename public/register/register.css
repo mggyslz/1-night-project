@@ -1,69 +1,88 @@
 /* register.css */
 
+:root {
+  --primary: #1f2937;      /* charcoal gray */
+  --secondary: #6b7280;    /* cool gray */
+  --accent: #10b981;       /* modern soft green */
+  --bg-light: #f9fafb;
+  --white: #ffffff;
+}
+
 body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(to right, #ff758c, #ff7eb3);
+  background-color: var(--bg-light);
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  color: var(--primary);
 }
 
 #app {
-  background: white;
-  padding: 3rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.2);
-  width: 320px;
+  background: var(--white);
+  padding: 2.5rem 2.75rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+  width: 360px;
   text-align: center;
 }
 
-#app h2 {
+.register-container h2 {
   margin-bottom: 1.5rem;
-  color: #333;
+  color: var(--primary);
+  font-weight: 600;
 }
 
-#app form {
+.register-container form {
   display: flex;
   flex-direction: column;
+  gap: 1rem;
 }
 
-#app input {
+.register-container input {
   padding: 0.75rem;
-  margin-bottom: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
   font-size: 1rem;
+  background-color: #f3f4f6;
+  transition: border 0.2s ease;
 }
 
-#app button {
+.register-container input:focus {
+  outline: none;
+  border-color: var(--accent);
+  background-color: #fff;
+}
+
+.register-container button {
   padding: 0.75rem;
-  background-color: #ff758c;
-  color: white;
-  font-weight: bold;
+  background-color: var(--primary);
+  color: var(--white);
+  font-weight: 600;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
-#app button:hover {
-  background-color: #e7516f;
+.register-container button:hover {
+  background-color: #111827;
+  transform: translateY(-2px);
 }
 
-#app p {
-  margin-top: 1rem;
+.register-container p {
+  margin-top: 1.25rem;
   font-size: 0.9rem;
-  color: #555;
+  color: var(--secondary);
 }
 
-#app a[data-link] {
-  color: #ff758c;
+.register-container a[data-link] {
+  color: var(--accent);
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 600;
 }
 
-#app a[data-link]:hover {
+.register-container a[data-link]:hover {
   text-decoration: underline;
 }
