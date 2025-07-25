@@ -13,8 +13,13 @@
 
 
 1-night-project/
+
 ├── index.html
+
 ├── style.css
+
 ├── script.js
+
 ├── (backend here)
+
 │
