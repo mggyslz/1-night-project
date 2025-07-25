@@ -1,17 +1,20 @@
 import { sql } from '../db.js';
-import '../../public/login/login.css'
-export function renderLogin() {
-    const html = `
-        <form id="login-form">
-            <h2>Log In</h2>
-                <input type="email" id="email" placeholder="Email" required />
-                <input type="password" id="password" placeholder="Password" required />
-                <button type="submit">Log In</button>
-            <p>Don't have an account? <a href="/register" data-link>Sign Up</a></p>
-        </form>
-    `;
+export async function renderLogin() {
+    const res = await fetch('/login/login.html');
+    const html = await res.text();
+    const app = document.getElementById('app');
+    app.innerHTML = html;
 
-    document.getElementById('app').innerHTML = html;
+    // ✅ Dynamically load CSS (if not already present)
+    if (!document.querySelector('link[href="/login/login.css"]')) {
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = 'login/login.css';
+        document.head.appendChild(link);
+    }
+
+    // ✅ Wait for DOM to finish rendering the injected HTML
+    await new Promise(requestAnimationFrame); // allows DOM paint cycle
 
     const form = document.getElementById('login-form');
     form.addEventListener('submit', async (e) => {
@@ -22,7 +25,9 @@ export function renderLogin() {
 
         try {
             // Await the query for the matching email
-            const result = await sql`SELECT * FROM users WHERE email = ${email}`;
+            const result = await sql`SELECT *
+                                     FROM users
+                                     WHERE email = ${email}`;
 
             if (!result || result.length === 0) {
                 alert('Invalid email or password');
