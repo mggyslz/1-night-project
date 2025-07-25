@@ -1,15 +1,6 @@
-import { Sidebar } from './components/Sidebar.js';
-import './style.css';
-import { router } from './router.js';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap';
+// src/main.js
+import { initRouter } from './router.js';
 
-document.querySelector('#app').innerHTML = `
-  <div class="app-layout">
-    ${Sidebar()}
-    <main id="view" class="main-content"></main>
-  </div>
-`;
-
-// window.addEventListener('hashchange', router);
-// window.addEventListener('load', router);
+window.addEventListener('DOMContentLoaded', () => {
+    initRouter();
+});

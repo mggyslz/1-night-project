@@ -1,26 +1,42 @@
-// import { Dashboard } from './components/Dashboard.js';
-// import { Elections } from './components/Elections.js';
-// import { Voters } from './components/Voters.js';
-// import { Results } from './components/Results.js';
-// import { Settings } from './components/Settings.js';
-// import { Help } from './components/Help.js';
+import { renderLanding } from './components/landing.js';
+import { renderLogin } from './components/login.js';
+import { renderRegister } from './components/register.js';
+import { renderDashboard } from './components/dashboard.js';
 
 const routes = {
-//   '#/dashboard': Dashboard,
-//   '#/elections': Elections,
-//   '#/voters': Voters,
-//   '#/results': Results,
-//   '#/settings': Settings,
-//   '#/help': Help,
+  '/': renderLanding,
+  '/login': renderLogin,
+  '/register': renderRegister,
+  '/dashboard': renderDashboard,
 };
 
-export function router() {
-  const route = window.location.hash || '#/dashboard';
-  const view = routes[route];
+export function initRouter() {
+  const app = document.getElementById('app');
 
-  if (view) {
-    document.querySelector('#view').innerHTML = view();
-  } else {
-    document.querySelector('#view').innerHTML = `<h2>404 - Page Not Found</h2>`;
+  async function navigate(path) {
+    const render = routes[path];
+    if (render) {
+      render();
+    } else {
+      app.innerHTML = `<h2>404 - Page Not Found</h2>`;
+    }
   }
+
+  function attachLinkInterception() {
+    document.body.addEventListener('click', (e) => {
+      if (e.target.matches('a[data-link]')) {
+        e.preventDefault();
+        const path = e.target.getAttribute('href');
+        history.pushState(null, '', path);
+        navigate(path);
+      }
+    });
+  }
+
+  window.addEventListener('popstate', () => {
+    navigate(location.pathname);
+  });
+
+  attachLinkInterception();
+  navigate(location.pathname); // Initial load
 }
