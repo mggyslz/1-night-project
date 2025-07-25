@@ -12,8 +12,6 @@
 | SQLite     | Lightweight relational database     |
 
 
-## Project Structure
-
 1-night-project/
 ├── index.html
 ├── style.css
