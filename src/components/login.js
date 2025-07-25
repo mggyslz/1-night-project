@@ -2,14 +2,14 @@ import { sql } from '../db.js';
 import '../../public/login/login.css'
 export function renderLogin() {
     const html = `
-    <form id="login-form">
-      <h2>Log In</h2>
-      <input type="email" id="email" placeholder="Email" required />
-      <input type="password" id="password" placeholder="Password" required />
-      <button type="submit">Log In</button>
-      <p>Don't have an account? <a href="/register" data-link>Sign Up</a></p>
-    </form>
-  `;
+        <form id="login-form">
+            <h2>Log In</h2>
+                <input type="email" id="email" placeholder="Email" required />
+                <input type="password" id="password" placeholder="Password" required />
+                <button type="submit">Log In</button>
+            <p>Don't have an account? <a href="/register" data-link>Sign Up</a></p>
+        </form>
+    `;
 
     document.getElementById('app').innerHTML = html;
 
