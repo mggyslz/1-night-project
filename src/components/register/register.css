@@ -1,0 +1,69 @@
+/* register.css */
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to right, #ff758c, #ff7eb3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#app {
+  background: white;
+  padding: 3rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.2);
+  width: 320px;
+  text-align: center;
+}
+
+#app h2 {
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+#app form {
+  display: flex;
+  flex-direction: column;
+}
+
+#app input {
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+#app button {
+  padding: 0.75rem;
+  background-color: #ff758c;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#app button:hover {
+  background-color: #e7516f;
+}
+
+#app p {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+#app a[data-link] {
+  color: #ff758c;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#app a[data-link]:hover {
+  text-decoration: underline;
+}

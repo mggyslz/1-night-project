@@ -1,3 +1,4 @@
+import './register.css'
 export function renderRegister() {
     document.getElementById('app').innerHTML = `
     <h2>Register Page</h2>
