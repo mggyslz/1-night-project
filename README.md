@@ -12,14 +12,11 @@
 | SQLite     | Lightweight relational database     |
 
 
-1-night-project/              
+## Project Structure
+
+1-night-project/
+├── index.html
+├── style.css
+├── script.js
+├── (backend here)
 │
-├── backend/              
-│   └── (backend files)
-│
-├── frontend/              
-│   ├── index.html         
-│   ├── css/               
-│   │   └── style.css
-│   └── js/               
-│       └── main.js
